@@ -1,0 +1,13 @@
+﻿.vs
+.vscode
+Library
+*.vsconfig
+*.csproj
+test_xlab.sln
+obj
+Logs
+UserSettings
+Temp
+Packages
+.idea/.idea.Golf_Beginner_Developer
+Golf_Beginner_Developer.sln
