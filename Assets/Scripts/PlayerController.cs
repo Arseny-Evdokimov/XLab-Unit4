@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Golf
 {
-    public class PlayerContr : MonoBehaviour
+    public class PlayerController : MonoBehaviour
     {
         [SerializeField] private Player player;
 

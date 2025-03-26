@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Golf
 {
-    public class LevelContr : MonoBehaviour
+    public class LevelController : MonoBehaviour
     {
         public Spawners spawner;
         public float delay = 0.5f;

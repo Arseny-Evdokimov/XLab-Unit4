@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Golf
@@ -10,7 +11,7 @@ namespace Golf
     {
         public GameState gamePlayState;
         public TMP_Text scoreText;
-        public LevelContr LevelContr;
+        [FormerlySerializedAs("LevelContr")] public LevelController levelController;
 
         public void PlayGame()
         {
@@ -21,7 +22,7 @@ namespace Golf
         {
             base.OnEnable();
 
-            scoreText.text = $"Highscore: {LevelContr.highScore}";
+            scoreText.text = $"Highscore: {levelController.highScore}";
         }
     }
 }

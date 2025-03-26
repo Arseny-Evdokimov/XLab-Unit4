@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Golf
 {
     public class GamePlayState : GameState
     {
-        public LevelContr levelContr;
-        public PlayerContr playerContr;
+        [FormerlySerializedAs("levelContr")] public LevelController levelController;
+        [FormerlySerializedAs("playerContr")] public PlayerController playerController;
         public GameState gameOverState;
         public TMP_Text scoreText;
 
@@ -17,8 +18,8 @@ namespace Golf
         {
             base.OnEnable();
 
-            levelContr.enabled = true;
-            playerContr.enabled = true;
+            levelController.enabled = true;
+            playerController.enabled = true;
 
             GameEvents.onCollisionStones += OnGameOver;
             GameEvents.onStickHit += OnStickHit;
@@ -27,7 +28,7 @@ namespace Golf
 
         private void OnStickHit()
         {
-            scoreText.text = $" Score: {levelContr.score}";
+            scoreText.text = $" Score: {levelController.score}";
         }
 
         private void OnGameOver()
@@ -41,8 +42,8 @@ namespace Golf
 
             GameEvents.onCollisionStones -= OnGameOver;
 
-            levelContr.enabled = false;
-            playerContr.enabled = false;
+            levelController.enabled = false;
+            playerController.enabled = false;
         }
     }
 }

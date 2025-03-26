@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Golf
 {
-    public class GameContr : MonoBehaviour
+    public class GameController : MonoBehaviour
     {
         public MainMenuState mainMenuState;
 
